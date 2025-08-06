@@ -75,7 +75,7 @@ class AdaptiveThreshold:
                 adaptive_method = cv2.ADAPTIVE_THRESH_GAUSSIAN_C
             
             # 设置阈值类型
-            if 阈值类型 == "二进制":
+            if 阈值类型 == "二值化":
                 thresh_type = cv2.THRESH_BINARY
             else:  # 反向二进制
                 thresh_type = cv2.THRESH_BINARY_INV

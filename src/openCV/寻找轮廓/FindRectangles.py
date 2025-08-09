@@ -4,7 +4,7 @@ import numpy as np
 class FindRectangles:
     '''
     寻找矩形轮廓
-    通过多种几何判据识别图像中的矩形
+    通过多种几何判据严格的识别图像中的矩形轮廓
     '''
     
     def __init__(self):

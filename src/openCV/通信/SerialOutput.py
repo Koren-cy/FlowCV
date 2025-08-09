@@ -6,7 +6,7 @@ import numpy as np
 class SerialOutput:
     '''
     串口输出
-    将任意类型数据以文本形式通过串口发送
+    通过串口发送任意类型数据
     '''
     
     def __init__(self):

@@ -66,7 +66,7 @@ class CAM:
             if not ret:
                 raise Exception("无法从摄像头读取图像")
             
-            return (frame,)
+            return (frame,CAM.time)
             
         except Exception as e:
             print(f"摄像头错误: {e}")

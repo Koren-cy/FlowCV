@@ -16,7 +16,7 @@ export class NodeRegistry {
     }
 
     async loadNodes(prefix) {
-        const nodeFiles = ['ShowDOM', 'ShowMarkdown'];
+        const nodeFiles = ['ShowDOM', 'ShowMarkdown', 'ShowWebpage'];
         
         for (const nodeFile of nodeFiles) {
             const nodeClass = `${prefix}_${nodeFile}`;

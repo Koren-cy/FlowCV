@@ -17,6 +17,7 @@ class MarkdownEditor:
 
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("markdown代码",)
+    OUTPUT_NODE = True
 
     def process(self, 内容):
         # 处理输入的初始内容

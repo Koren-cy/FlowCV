@@ -2,10 +2,7 @@ import { marked } from 'https://cdn.jsdelivr.net/npm/marked@12.0.0/+esm';
 
 export default function(node) {
     // 设置节点大小
-    node.size = [500, 400];
-    
-    // 存储当前的markdown内容
-    let currentMarkdown = "";
+    node.size = [400, 350];
 
     // 创建主容器
     const mainContainer = document.createElement("div");
@@ -58,7 +55,7 @@ export default function(node) {
     editor.style.border = "none";
     editor.style.outline = "none";
     editor.style.resize = "none";
-    editor.style.padding = "10px";
+    editor.style.padding = "10px 20px";
     editor.style.backgroundColor = "#1a1a1a";
     editor.style.color = "#e0e0e0";
     editor.style.fontSize = "13px";
@@ -71,7 +68,7 @@ export default function(node) {
     const preview = document.createElement("div");
     preview.style.width = "100%";
     preview.style.height = "100%";
-    preview.style.padding = "10px";
+    preview.style.padding = "10px 35px";
     preview.style.backgroundColor = "#1a1a1a";
     preview.style.color = "#e0e0e0";
     preview.style.fontSize = "13px";
@@ -80,6 +77,9 @@ export default function(node) {
     preview.style.display = "none";
     preview.innerHTML = "<p style='color: #888;'>预览将在这里显示...</p>";
     contentArea.appendChild(preview);
+        
+    // 存储当前的markdown内容
+    let currentMarkdown = "";
 
     // 添加预览样式
     const previewStyle = document.createElement("style");

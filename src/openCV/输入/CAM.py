@@ -1,5 +1,7 @@
 import cv2
 import time
+import numpy as np
+
 
 class CAM:
     '''
@@ -71,7 +73,7 @@ class CAM:
         except Exception as e:
             print(f"摄像头错误: {e}")
             # 返回一个黑色图像作为错误处理
-            error_image = cv2.zeros((高度, 宽度, 3), dtype=cv2.uint8)
+            error_image = np.zeros((高度, 宽度, 3), dtype=np.uint8)
             cv2.putText(error_image, "Camera Error", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
             return (error_image,CAM.time)
     

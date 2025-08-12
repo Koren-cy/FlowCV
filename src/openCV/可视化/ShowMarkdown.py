@@ -16,6 +16,7 @@ class ShowMarkdown:
         }
 
     RETURN_TYPES = ()
+    RETURN_NAMES = ()
     OUTPUT_NODE = True
 
     def process(self, 内容):

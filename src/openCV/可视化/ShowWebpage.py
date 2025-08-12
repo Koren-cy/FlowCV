@@ -16,6 +16,7 @@ class ShowWebpage:
         }
 
     RETURN_TYPES = ()
+    RETURN_NAMES = ()
     OUTPUT_NODE = True
 
     def process(self, 网址):

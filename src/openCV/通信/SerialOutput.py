@@ -1,6 +1,5 @@
 import serial
 import json
-from comfy.comfy_types.node_typing import IO
 import numpy as np
 
 class SerialOutput:
@@ -18,7 +17,7 @@ class SerialOutput:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "数据输入": (IO.ANY, {
+                "数据输入": ("*", {
                     "tooltip": "要发送的数据，支持任意类型"
                 }),
                 "串口端口": ("STRING", {

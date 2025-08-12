@@ -21,6 +21,7 @@ class ShowImage:
         }
 
     RETURN_TYPES = ()
+    RETURN_NAMES = ()
     OUTPUT_NODE = True
 
     def process(self, 图片输入):
@@ -41,16 +42,19 @@ class ShowImage:
             else:
                 rgb_image = np.clip(rgb_image, 0, 255).astype(np.uint8)
         
-        # 使用上下文管理器防止内存泄漏
+        # 防止内存泄漏
         with BytesIO() as buffer:
             pil_image = Image.fromarray(rgb_image, 'RGB')
             pil_image.save(buffer, format='PNG')
             result = base64.b64encode(buffer.getvalue()).decode()
-            # 显式清理PIL对象
             pil_image.close()
             del pil_image
         
-        # 清理numpy数组引用
-        del rgb_image
-        
         return {"ui": {"data": [result]}}
+
+    def process_local(self, 图片输入):
+        cv2.imshow('Image', 图片输入)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            import sys
+            cv2.destroyAllWindows()
+            sys.exit(0)

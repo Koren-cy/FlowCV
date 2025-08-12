@@ -1,7 +1,6 @@
 import cv2
-import numpy as np
 
-class 形态学操作:
+class Morphology:
     '''
     形态学操作
     提供完整的形态学操作功能，包括腐蚀、膨胀、开运算、闭运算、形态学梯度、顶帽、黑帽

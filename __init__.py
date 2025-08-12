@@ -15,7 +15,6 @@ from .src.nodes import NODE_DISPLAY_NAME_MAPPINGS
 
 WEB_DIRECTORY = "./web"
 
-
 import json
 import server
 import traceback

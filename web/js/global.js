@@ -13,40 +13,6 @@ app.registerExtension({
     },
 });
 
-// 注册 FlowCV 侧边栏
-app.extensionManager.registerSidebarTab({
-  id: "FCV_Tab",
-  icon: "pi pi-list",
-  title: "FlowCV",
-  tooltip: "FlowCV 的侧边栏",
-  type: "custom",
-  render: (el) => {
-    // 创建元素
-    const container = document.createElement('div');
-    container.style.padding = '10px';
-    
-    const notepad = document.createElement('textarea');
-    notepad.style.width = '100%';
-    notepad.style.height = '200px';
-    notepad.style.marginBottom = '10px';
-    
-    // 加载已保存内容（如有）
-    const savedContent = localStorage.getItem('comfyui-notes');
-    if (savedContent) {
-      notepad.value = savedContent;
-    }
-    
-    // 自动保存内容
-    notepad.addEventListener('input', () => {
-      localStorage.setItem('comfyui-notes', notepad.value);
-    });
-    
-    // 组装 UI
-    container.appendChild(notepad);
-    el.appendChild(container);
-  }
-});
-
 // 注册 FlowCV 编译按钮
 app.registerExtension({
 	name: "FlowCVcompiler",

@@ -90,7 +90,7 @@ class Node_info:
             return f'_node_{self.name}_{self.id}_.{func_code}({input_code})\n'
   
 class Compiler():
-    """FlowCV编译器主类，负责将工作流转换为Python代码"""
+    """编译器主类，负责将工作流转换为Python代码"""
     def __init__(self, workflow:dict, output_file:StringIO):
         # code section
         self.dependency_code:str = ''

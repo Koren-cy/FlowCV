@@ -53,7 +53,7 @@ class ShowImage:
         return {"ui": {"data": [result]}}
 
     def process_local(self, 图片输入):
-        cv2.imshow('Image', 图片输入)
+        cv2.imshow(f'Image_{id(self)}', 图片输入)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             import sys
             cv2.destroyAllWindows()
